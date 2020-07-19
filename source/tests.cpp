@@ -11,6 +11,8 @@ TEST_CASE("sphere area and volume", "[sphere]") {
   Sphere s2{"s2", {1.0f, 0.3f, 0.7f}, {1.0f, 0.0f, 0.0f}, 0.0f};
   REQUIRE(s2.area() == 0.0f);
   REQUIRE(s2.volume() == 0.0f);
+  s1.print(std::cout);
+  s2.print(std::cout);
 }
 
 TEST_CASE("box area and volume", "[box]") {
@@ -20,6 +22,8 @@ TEST_CASE("box area and volume", "[box]") {
   Box b2{"b2", {1.0f, 0.3f, 0.7f}, {-1.0f, -1.0f, -1.0f}, {1.0f, 1.0f, 1.0f}};
   REQUIRE(b2.area() == 24.0f);
   REQUIRE(b2.volume() == 8.0f);
+  b1.print(std::cout);
+  b2.print(std::cout);
 }
 
 int main(int argc, char *argv[])
