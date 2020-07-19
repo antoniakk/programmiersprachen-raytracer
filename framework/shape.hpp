@@ -11,7 +11,7 @@ class Shape {
     virtual float area() const = 0;
     virtual float volume() const = 0;
     Shape(std::string name, Color const& color);
-    virtual std::ostream& print(std:: ostream& os) const;
+    virtual std::ostream& print(std::ostream& os) const;
     private:
     std::string name_;
     Color color_;

@@ -12,3 +12,8 @@ float Box::area() const {
 float Box::volume() const {
     return (max_.z - min_.z)*(max_.x - min_.x)*(max_.y - min_.y);
 }
+
+std::ostream& Box::print(std::ostream& os) const {
+    Shape::print(os);
+    os << "Minimum: (" << min_.x << ", " << min_.y << ", " << min_.z << ")" << "\n" << "Maximum: (" << max_.x << ", " << max_.y << ", " << max_.z << ")" << "\n";
+};
