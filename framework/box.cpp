@@ -17,3 +17,7 @@ std::ostream& Box::print(std::ostream& os) const {
     Shape::print(os);
     os << "Minimum: (" << min_.x << ", " << min_.y << ", " << min_.z << ")" << "\n" << "Maximum: (" << max_.x << ", " << max_.y << ", " << max_.z << ")" << "\n";
 };
+
+Box::~Box() {
+    std::cout << "Box destructor" << std::endl;
+}

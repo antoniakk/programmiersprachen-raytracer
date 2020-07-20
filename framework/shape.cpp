@@ -11,3 +11,7 @@ std::ostream& Shape::print(std::ostream& os) const {
 std::ostream& operator<<(std::ostream& os, Shape const& s) {
     s.print(os);
 };
+
+Shape::~Shape() {
+    std::cout << "Shape destructor" << std::endl;
+}

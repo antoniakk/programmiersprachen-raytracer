@@ -23,3 +23,22 @@ std::ostream& Sphere::print(std::ostream& os) const {
     Shape::print(os);
     os << "Radius: " << radius_ << "\nCentre: (" << centre_.x << ", " << centre_.y << ", " << centre_.z << ")" << "\n";
 };
+
+HitPoint Sphere::intersect(Ray const& ray) const {
+    HitPoint hit_point{};
+    bool result = glm::intersectRaySphere(ray.ray_origin, 
+        glm::normalize(ray.ray_direction), 
+        centre_, radius_*radius_, hit_point.distance);
+    
+    if (result) {
+        hit_point.intersected = true;
+        hit_point.name = name_;
+        hit_point.color = color_;
+    }
+    
+    return hit_point;
+};
+
+Sphere::~Sphere() {
+    std::cout << "Sphere destructor" << std::endl;
+}
